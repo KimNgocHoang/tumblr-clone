@@ -60,8 +60,7 @@ html {
 
 .header .icon-search {
     color: rgba(255, 255, 255, 0.65);
-    margin-left: 12px;
-    margin-right: 2px;
+    margin: 0 2px 0 12px;
     font-size: 18px;
     line-height: 34px;
     font-weight: bold;
@@ -70,13 +69,18 @@ html {
 input {
     color: rgba(255, 255, 255, 0.65);
     background-color: rgba(0, 0, 0, 0);
-    border: 0 ;
     font-size: 17px;
     width: 448px;
     padding: 5px;
     line-height: 24px;
     position: absolute;
-    font-weight: 400;
+    border: 0;
+    border-color: rgba(255, 255, 255, 0.25);
+}
+
+input:focus{
+    outline: none;
+    color: #fff;
 }
 
 .header .list {
@@ -84,9 +88,6 @@ input {
     float: right;
 }
 
-/* .clearBoth {
-    clear: both;
-} */
 
 .header .icons-nav {
     color: rgba(255, 255, 255, 0.65);
@@ -116,10 +117,6 @@ input {
     font-size: 22px;
 }
 
-/* hr.solid {
-    margin-top: 54px;
-    border-top: 0.05px solid #bbb;
-} */
 
 .content {
     box-sizing: border-box;
@@ -136,7 +133,7 @@ input {
     width: 100%;
 }
 
-img {
+.header-image img {
     max-width: 100%;
     max-height: 100%;
     border-radius: 3px;
@@ -157,7 +154,7 @@ img {
 
 .content .header-icons {
     background: rgb(34,34,34);
-    border-radius:4px;
+    border-radius:3px;
     color:#fff;
     display: inline-block;
     padding: 15px 5px;
@@ -213,7 +210,133 @@ img {
 }
 
 .content .content-blogs {
+    margin-top: 130px;
+}
 
+.content-blogs .img-user img {
+    width: 64px;
+    border-radius: 3px;
+    margin-right: 20px;
+}
+
+.blog {
+    display: flex;
+    margin-bottom: 24px;
+}
+.blog-content {
+    background: rgb(34, 34, 34);
+    width: 540px;
+    border-radius: 3px;
+    height: auto;
+    padding: 15px 0px;
+    color: #fff;
+}
+.header-blog {
+    display: flex;
+    position: relative;
+    margin-bottom: 15px;
+    padding: 0 20px;
+}
+
+.header-blog h4 {
+    font-size: 14px;
+}
+
+.header-blog i {
+    color: rgba(255, 255, 255, 0.65);
+    position: absolute;
+    right: 0;
+    font-size: 21px;
+    padding-right: 20px;
+}
+
+.header-blog h4 i {
+    left: 11%;
+    font-size: 15px;
+    position: relative;
+}
+
+.header-blog .p-reblog {
+    position: absolute;
+    top: 0;
+    left: 19%;
+}
+
+hr {
+    border: 1px solid rgba(255, 255, 255, 0.13);
+}
+
+.body-blog span{ 
+    color: rgba(255, 255, 255, 0.65);
+}
+
+
+.body-blog img {
+    width: 100%;
+}
+.body-blog p{ 
+    margin-bottom: 15px;
+    line-height: 1.5;
+    padding: 0 20px;
+}
+
+.body-blog .p-hastag {
+    color: rgba(255, 255, 255, 0.65);
+    padding: 0 20px;
+}
+
+.body-header-blog {
+    display: flex;
+    padding: 16px 20px 5px;
+    line-height:54px;
+}
+
+.body-header-blog img {
+    width: 25px;
+    height: 25px;
+    border-radius: 3px;
+}
+
+.body-header-blog p {
+    padding:1px 8px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.body-header-blog a {
+    text-decoration: none;
+    line-height: 25px;
+    color: #00B8FF;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.footer-blog {
+    display: flex;
+    padding: 12px 0px 5px 20px;
+    position: relative;
+    color: rgba(255, 255, 255, 0.65);
+}
+
+.footer-blog .reacts {
+    position: absolute;
+    right: 0;
+}
+
+.footer-blog p {
+    
+    font-weight: bold;
+}
+
+.footer-blog .reacts li {
+    display: inline-block;
+    margin-left: 20px;
+    font-size: 21px;
+    cursor: pointer;
+}
+
+.footer-blog .reacts li:last-child {
+    margin-right: 20px;
 }
 
 .content .content-beside {
@@ -233,9 +356,68 @@ img {
     margin-bottom: 2px;
     border-bottom: 1.5px solid rgba(255, 255, 255, 0.13);
 }
-h2 {
+.content-beside .beside-text h2 {
     color: #fff;
+    font-weight: 500;
 }
+
+.list-followers {
+    margin-top: 16px;
+}
+
+.item-follower {
+    padding: 8px 10px;
+    display: flex;
+    max-width: 100%;
+}
+
+.item-follower img{
+    width: 37px;
+    height: 37px;
+    border-radius: 2px;
+}
+
+.item-follower .info-item {
+    color: #fff;
+    font-size: 14px;
+    padding-left: 14px;
+    line-height: 1.5;
+    position: relative;
+}
+
+.item-follower .info-item p {
+    color: rgba(255, 255, 255, 0.65);
+}
+
+.item-follower .btn-delete,
+.item-follower .btn-follow {
+    line-height: 51px;
+    position: absolute;
+    right: 18%;
+}
+
+.item-follower .btn-follow {
+    padding: 0 8px;
+    font-size: 14px;
+    margin-right: 34px;
+}
+
+.item-follower .btn-follow a{
+    text-decoration: none;
+    color: #00B8FF;
+    font-weight: bold;
+}
+
+.item-follower .btn-delete {
+    padding-right: 10px;
+    font-weight: bolder;
+    cursor: pointer;
+}
+
+.item-follower .btn-delete i{
+    color: rgba(255, 255, 255, 0.65);
+}
+
 
 
 .footer {
