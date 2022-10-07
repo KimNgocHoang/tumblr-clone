@@ -12,9 +12,10 @@
 </head>
 <body>
     <div id="id" class="main">
+        <!-- Header -->
         <div class="header">
+            <i class="menu-btn-bar fa-solid fa-bars"></i>
             <div class="nav">
-                <i class="menu-btn fa-solid fa-bars"></i>
                 <i class="ti-tumblr-alt"></i>
                 <div class="nav-search">
                     <form class="form-search">
@@ -22,7 +23,7 @@
                         <input class="search" type="text" placeholder="Search Tumblr">
                     </form>
                 </div>
-                <i class="icon-search ti-search"></i>
+                <i class="icon-search-mobile ti-search"></i>
                 <div class="clear"></div>
             </div>
             <div class="list">
@@ -33,15 +34,34 @@
                     <i class="icon fa-solid fa-comment-sms"></i>
                     <i class="icon fa-solid fa-bolt"></i>
                     <i class="icon fa-solid fa-user"></i>
-                    <div class="create" >
+                    <div class="create js-create" >
                         <i class="fa-solid fa-pencil"></i>
                     </div>
                 </ul>
                 <br class="clearBoth" />
             </div>
         </div>
+        <div class="selection-subnav">
+            <div class="content-seletion-mobile">
+                <a href="">Following 💖</a>
+                <a id="btn-more" href="">
+                    More
+                    <i class="fa-solid fa-circle-chevron-down"></i>
+                </a>
+            </div>
+            <div class="subnav-more">
+                <ul class="subnav">
+                    <li><a href="">For you 🔮</a></li>
+                    <li><a href="">Your tags 🔖</a></li>
+                    <li><a href="">Manage…</a></li>
+                </ul>
+            </div>
 
+        </div>
+
+        <!-- Content -->
         <div class="content">
+            <!-- Content main -->
             <div class="content-main">
                 <div class="header-image">
                     <img src="./assets/img/ava1.jpg" alt="">
@@ -93,21 +113,16 @@
                             </li>
                         </ul>
                     </div>
-                    <div class="content-seletion">
+                    <div class=" content-seletion">
                         <a href="">Following 💖</a>
                         <a href="">For you 🔮</a>
                         <a href="">Your tags 🔖</a>
                         <a href="">Manage…</a>
                     </div>
 
-                    <div class="content-seletion-mobile">
-                        <a href="">Following 💖</a>
-                        <a href="">
-                            More
-                            <i class="fa-solid fa-circle-chevron-down"></i>
-                        </a>
-                    </div>
+                    
                 </div>
+                
                 <div class="content-blogs">
                     <article class="blog">
                         <div class="img-user">
@@ -204,6 +219,7 @@
                     </article>
                 </div>
             </div>
+            <!-- Content beside -->
             <div class="content-beside">
                 <aside class="content-common">
                     <div class="beside-heading">
@@ -308,5 +324,81 @@
         </div>
 
     </div>
+
+    <!-- Modal -->
+    <div class="modal js-modal">
+        <div class="modal-container js-modal-container">
+            <div class="modal-body">
+                <ul class="modal-icons">
+                    <li>
+                        <i class="fa-solid fa-font" style="background-color:#fff"></i>
+                        <span>text</span>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-camera" style="background-color:rgb(255, 73, 48)"></i>
+                        <span>Photo</span>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-quote-left" style="background-color:rgb(255, 138, 0)"></i>
+                        <span>Quote</span>
+                    </li>
+                    <li>
+                        <i class="fa-sharp fa-solid fa-link" style="background-color:rgb(0, 207, 53)"></i>
+                        <span>Link</span>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-message" style="background-color:rgb(0, 184, 255)"></i>
+                        <span>Chat</span>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-headphones-simple" style="background-color:rgb(124, 92, 255)"></i>
+                        <span>Audio</span>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-video" style="background-color:rgb(255, 98, 206)"></i>
+                        <span>Video</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const createPost = document.querySelector('.js-create');
+        const modal = document.querySelector('.js-modal');
+        const modalContainer = document.querySelector('.js-modal-container');
+
+        const showListAction = () => {
+            modal.classList.add('open')
+        }
+
+        const closeListAction = () => {
+            modal.classList.remove('open')
+        }
+
+        createPost.addEventListener('click', showListAction);
+        modal.addEventListener('click', closeListAction);
+        modalContainer.addEventListener('click', (e) => {
+            e.stopPropagation();
+        });
+
+        var btnMore = document.getElementById('btn-more');
+        var subnav = document.querySelector('.subnav-more');
+        var hsub = subnav.clientHeight;
+        console.log(hsub);
+
+        btnMore.onclick = (e) => {
+            e.preventDefault();
+            var isClose = subnav.clientHeight === hsub;
+            if(isClose) {
+                subnav.classList.add('open');
+            }
+            else {
+                subnav.classList.remove('open');
+            }
+        }
+        
+
+    </script>
 </body>
 </html>
