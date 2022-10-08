@@ -14,7 +14,15 @@
     <div id="id" class="main">
         <!-- Header -->
         <div class="header">
-            <i class="menu-btn-bar fa-solid fa-bars"></i>
+            <div class="menu-btn-bar">
+                <i class=" js-btn-bar fa-solid fa-bars"></i>
+
+            </div>
+            <div class="nav_overlay"></div>
+            <div class="nav-btn-close">
+                <i class="js-btn-close fa-solid fa-xmark"></i>
+
+            </div>
             <div class="nav">
                 <i class="ti-tumblr-alt"></i>
                 <div class="nav-search">
@@ -430,6 +438,7 @@
     </div>
 
     <script>
+        // dong mo modal create post pc
         const createPost = document.querySelector('.js-create');
         const modal = document.querySelector('.js-modal');
         const modalContainer = document.querySelector('.js-modal-container');
@@ -448,6 +457,7 @@
             e.stopPropagation();
         });
 
+        // Mo button More
         var btnMore = document.getElementById('btn-more');
         var subnav = document.querySelector('.subnav-more');
         var hsub = subnav.clientHeight;
@@ -464,7 +474,45 @@
             }
         }
         
+        // Dong mo navbar mobile
+        const btnNavBar = document.querySelector('.menu-btn-bar');
+        const btnCloseNav = document.querySelector('.nav-btn-close');
+        const iconsMobile = document.querySelector('.list-icons-mobile');
+        const navOverlay = document.querySelector('.nav_overlay');
+        console.log(navOverlay);
+        var hNavBar = iconsMobile.clientHeight;
 
+        btnNavBar.onclick = (e) => {
+            e.preventDefault();
+            var isClose = iconsMobile.clientHeight === hNavBar;
+            if (isClose) {
+                iconsMobile.classList.add('open');
+                btnNavBar.classList.add('close');
+                btnCloseNav.classList.add('open');
+                navOverlay.classList.add('open');
+            }
+            else {
+                iconsMobile.classList.remove('open');
+                btnNavBar.classList.remove('close');
+                btnCloseNav.classList.remove('open');
+                // 
+            }
+        }
+
+        btnCloseNav.onclick = (e) => {
+            var isClose = iconsMobile.clientHeight === hNavBar;
+            if (!isClose) {
+                iconsMobile.classList.remove('open');
+                btnNavBar.classList.remove('close');
+                btnCloseNav.classList.remove('open');
+                navOverlay.classList.remove('open');
+            }
+            else {
+                iconsMobile.classList.add('open');
+                btnNavBar.classList.add('close');
+                btnCloseNav.classList.add('open');
+            }
+        }
     </script>
 </body>
 </html>
