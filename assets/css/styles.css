@@ -13,6 +13,7 @@
 html {
     font-family: Helvetica, Arial, sans-serif;
     background: #000;
+    font-size: 1.6rem;
 }
 
 #main {
@@ -24,7 +25,7 @@ html {
     width:100%;
     background-color:#000;
     box-sizing: border-box;
-    padding: 0 20px 0 0px;
+    padding: 0 0 0 20px;
     position: fixed;
     top: 0;
     left: 0;
@@ -35,6 +36,7 @@ html {
 
 .nav {
     display: inline-block;
+    width: 65vw;
 }
 
 .header .ti-tumblr-alt {
@@ -88,8 +90,8 @@ input:focus{
     float: right;
 }
 
-
 .header .icons-nav {
+    width: 30vw;
     color: rgba(255, 255, 255, 0.65);
     font-size: 28px;
     line-height:54px;
@@ -100,12 +102,10 @@ input:focus{
     font-size: 22px;
     line-height:32px;
 }
-
-
 .header .create {
     display: inline-block;
     width: 45px;
-    margin: 0 2px 0 18px;
+    margin: 0 0 0 18px;
     background-color:rgb(0, 184, 255);
     border-radius:3px;
     text-align: center;
@@ -121,17 +121,15 @@ input:focus{
 
 .content {
     box-sizing: border-box;
-    max-width: 990px;
     padding: 0 8px;
-    width: 100%;
+    width: 65vw;
     margin: 94px auto 0;
-    height: 1000px;
+    display: flex;
 }
 
 .content .content-main {
     display: inline-block;
-    max-width: 625px;
-    width: 100%;
+    width: 64%;
 }
 
 .header-image img {
@@ -282,6 +280,7 @@ hr {
     margin-bottom: 15px;
     line-height: 1.5;
     padding: 0 20px;
+    font-size: 16px;
 }
 
 .body-blog .p-hastag {
@@ -325,10 +324,11 @@ hr {
 .footer-blog .reacts {
     position: absolute;
     right: 0;
+    font-size:16px;
 }
 
 .footer-blog p {
-    
+    font-size:16px;
     font-weight: bold;
 }
 
@@ -344,25 +344,20 @@ hr {
 }
 
 .content .content-beside {
-    float: right;
-    max-width: 320px;
-    padding-left: 10px;
+    margin-left: 30px;
+    display: inline-block;
     width: 100%;
 }
 
-.content .content-common {
-
-}
-
-
 .content-beside .beside-text {
+    font-size: 14px;
     padding: 0 10px 10px;
     margin-bottom: 2px;
-    border-bottom: 1.5px solid rgba(255, 255, 255, 0.13);
+    border-bottom: 2.25px solid rgba(255, 255, 255, 0.13);
 }
 .content-beside .beside-text h2 {
     color: #fff;
-    font-weight: 500;
+    font-weight: 700;
 }
 
 .list-followers {
@@ -402,7 +397,7 @@ hr {
     display: flex;
     position: absolute;
     top: 0;
-    transform: translateX(160%);
+    transform: translateX(175%);
 }
 
 .item-follower .btn-delete,
@@ -412,7 +407,7 @@ hr {
 
 .item-follower .btn-follow {
     padding: 0 8px;
-    font-size: 14px;
+    font-size: 13px;
     margin-right: 14px;
 }
 
@@ -434,6 +429,7 @@ hr {
 
 .btn-explore {
     margin-top:32px;
+    font-size:16px;
 }
 
 .btn-explore a{
@@ -450,6 +446,7 @@ hr {
     display: inline-block;
     bottom: 0;
     margin-bottom: 24px;
+    font-size: 1px;
 }
 
 .footer li {
@@ -457,6 +454,7 @@ hr {
     color: #00B8FF;
     font-size: 14px;
     margin-right: 12px;
+    font-weight: 100;
 }
 .selection-subnav{
     display: none;
@@ -519,7 +517,12 @@ hr {
     display: none;
 }
 
-@media (max-width: 740px) {
+@media (max-width: 1024px) and (min-width: 768px) {
+    .content {
+        max-width: 70vw;
+    }
+}
+@media (max-width: 768px) {
     .content .content-beside,
     .content-main .header-icons, 
     .content-main .header-image,
@@ -540,7 +543,7 @@ hr {
     }
     .nav_overlay {
         position: fixed;
-        top: 91px;
+        top: 100px;
         right: 0;
         left: 0;
         bottom: 0;
@@ -590,7 +593,7 @@ hr {
         font-weight: 900;
     }
     .selection-subnav {
-        display: inline-block;
+        display: flex;
         width: 100%;
         margin-top: 54px;
         position: relative;
@@ -656,6 +659,7 @@ hr {
         padding: 0;
         margin: 5px auto 0;
         position: relative;
+        width: 100vw;
     }
     .content .content-seletion{
         display: none;
@@ -719,6 +723,7 @@ hr {
         font-size: 16px;
         padding: 14px 0px;
         position: relative;
+        
     }
 
     .icons-nav-mobile {
